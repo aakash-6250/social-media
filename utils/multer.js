@@ -1,8 +1,6 @@
 const multer = require('multer')
 const path = require('path')
 const {v4 : uuidv4 } = require('uuid')
-const fs = require('fs')
-const fsExtra = require('fs-extra')
 
   const profile = multer.diskStorage({
     destination: function (req, file, cb) {
