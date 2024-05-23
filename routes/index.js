@@ -6,6 +6,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const sendEmail = require('../utils/emailService');
 const { uploadProfile, uploadPost } = require('../utils/multer');
+const fs = require('fs')
 
 
 passport.use(new LocalStrategy(User.authenticate()));
@@ -113,9 +114,12 @@ router.post('/edit-profile/:username', uploadProfile, async function (req, res, 
         const { name, username, bio, oldpassword, newpassword } = req.body;
         const user = await User.findByUsername(req.params.username);
         if (!user) res.status(404).render('error', { message: "Profile not updated.", error: "User not found." });
-        if (!name && !username && !oldpassword && !newpassword && !profile && !bio) res.render('error', { message: "Profile not updated.", error: "Nothing is provided to update." });
         if(req.file){
-            user.profile =  req.file.filename;
+            if(!user.profile) user.profile =  req.file.filename;
+            else{
+                fs.unlinkSync(path.join("public","images","profile",user.profile));
+                user.profile = req.file.filename;
+            }
         }
         if (name) {
             user.name = name;
@@ -148,6 +152,16 @@ router.get('/logout', function (req, res, next) {
         res.redirect("/");
     });
 });
+
+router.get('/delete-account/:id', async (req, res, next)=>{
+    try {
+        const user = await User.findByIdAndDelete(req.params.id);
+        fs.unlinkSync(path.join("public","images","profile",user.profile));
+    } catch (error) {
+        console.error(error)
+        res.redirect('/edit-profile')
+    }
+})
 
 
 
