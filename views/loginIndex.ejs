@@ -1,0 +1,56 @@
+<%- include('./partials/header') %>
+
+<%- include('./partials/nav') %>
+
+
+    <div id="container" class="w-full bg-zinc-300">
+        <div id="posts" class="flex flex-col justify-start items-center gap-[5vh] py-[3vh]">
+            <div id="post" class="rounded-md md:w-[500px] md:h-[600px] w-[350px] h-[450px] bg-white p-2 flex flex-col">
+                <div class="w-full h-[20%] flex justify-around">
+                  <img
+                    src="/images/profile/<%= user.profile %>"
+                    alt="" class="rounded-full h-[90%] w-[25%]">
+                  <div class=" w-[70%] h-[70%] flex flex-col items-start justify-around">
+                    <p><b>
+                        <%= user.name %>
+                      </b></p>
+                    <p>@<%= user.username %>
+                    </p>
+                  </div>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1474447976065-67d23accb1e3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+                  alt="" class="w-full h-[65%] object-cover object-top rounded-md">
+                <div class="w-full h-[15%] flex justify-around items-center ">
+                  <i class="ri-heart-line text-2xl"></i>
+                  <i class="ri-chat-1-line text-2xl"></i>
+                  <i class="ri-share-fill text-2xl"></i>
+                </div>
+              </div>
+              <div id="post" class="rounded-md w-[30%] h-[55vh] bg-white p-2 flex flex-col">
+                <div class="w-full h-[20%] flex justify-around">
+                  <img
+                    src="/images/profile/<%= user.profile %>"
+                    alt="" class="rounded-full h-[90%] w-[25%]">
+                  <div class=" w-[70%] h-[70%] flex flex-col items-start justify-around">
+                    <p><b>
+                        <%= user.name %>
+                      </b></p>
+                    <p>@<%= user.username %>
+                    </p>
+                  </div>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1474447976065-67d23accb1e3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+                  alt="" class="w-full h-[65%] object-cover object-top rounded-md">
+                <div class="w-full h-[15%] flex justify-around items-center ">
+                  <i class="ri-heart-line text-2xl"></i>
+                  <i class="ri-chat-1-line text-2xl"></i>
+                  <i class="ri-share-fill text-2xl"></i>
+                </div>
+              </div>
+        </div>
+    </div>
+
+
+<%- include('./partials/footer') %>

@@ -1,0 +1,91 @@
+<%- include('./partials/header') %>
+
+  <%- include('./partials/nav') %>
+
+
+    <div id="container" class="w-[100%] min-h-[90vh]  flex justify-center items-center">
+      <div id="profile" class=" md:w-[85%] w-full h-full flex flex-col justify-between items-center  py-[5vh]">
+
+        <div id="profile-details" class=" w-[85%] min-h-[30vh] flex flex-wrap items-center justify-around pb-[2.5vh] px-[7vw] border-[#4D869C] border-b-[1px]">
+          <div id="dp" class="h-[13vmax] w-[13vmax] rounded-full overflow-hidden object-cover object-center">
+              <% if(user.profile){ %>
+                <img src="/images/profile/<%= user.profile %>"alt="" class="w-full h-full">
+              <% }else{ %>
+                <div id="user-profile" class="rounded-full border-[1px] border-black bg-zinc-100 p-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"></path><path d="M20 22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13Z"></path></svg>
+                </div>
+              <% } %>
+          </div>
+          <div id="user-options" class="w-[40vw] h-full p-4 flex flex-col gap-4">
+            <div id="buttons" class="flex gap-6 items-center text-lg">
+              <p>
+                <%= user.username %>
+              </p>
+              <a href="/edit-profile" class="bg-[#EEF7FF] text-[#4D869C] px-3 py-1 rounded-xl">Edit Profile</a>
+            </div>
+            <div id="popularity" class="flex gap-[7vw] items-center ">
+              <p>9 posts</p>
+              <p>122 following</p>
+              <p>2000 follewrs</p>
+            </div>
+            <div id="about-content" class="md:block hidden">
+              <p><b>
+                  <%= user.name %>
+                </b></p>
+              <p><%= user.bio %></p>
+            </div>
+          </div>
+          <div id="about-content" class="md:hidden block w-full">
+            <p><b>
+                <%= user.name %>
+              </b></p>
+            <p><%= user.bio %></p>
+          </div>
+        </div>
+
+        <div id="user-content" class=" w-[85%]">
+          <div id="buttons" class="flex justify-center items-center mb-2">
+            <button class="px-2 mx-4 py-1 text-lg">Posts</button>
+            <button class="px-2 mx-4 py-1 text-lg">Saved</button>
+            <button class="px-2 mx-4 py-1 text-lg">Tagged</button>
+          </div>
+          <div id="posts" class=" flex flex-wrap justify-center  gap-1 ">
+            <div id="post" class="md:w-[300px] w-[150px] md:h-[400px] h-[200px]">
+              <img
+                src="https://images.unsplash.com/photo-1474447976065-67d23accb1e3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+                alt="" class="w-full h-full object-cover object-center">
+            </div>
+            <div id="post" class="md:w-[300px] w-[150px] md:h-[400px] h-[200px]">
+              <img
+                src="https://images.unsplash.com/photo-1474447976065-67d23accb1e3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+                alt="" class="w-full h-full object-cover object-center">
+            </div>
+            <div id="post" class="md:w-[300px] w-[150px] md:h-[400px] h-[200px]">
+              <img
+                src="https://images.unsplash.com/photo-1474447976065-67d23accb1e3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+                alt="" class="w-full h-full object-cover object-center">
+            </div>
+            <div id="post" class="md:w-[300px] w-[150px] md:h-[400px] h-[200px]">
+              <img
+                src="https://images.unsplash.com/photo-1474447976065-67d23accb1e3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+                alt="" class="w-full h-full object-cover object-center">
+            </div>
+            <div id="post" class="md:w-[300px] w-[150px] md:h-[400px] h-[200px]">
+              <img
+                src="https://images.unsplash.com/photo-1474447976065-67d23accb1e3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+                alt="" class="w-full h-full object-cover object-center">
+            </div>
+                        
+          </div>
+        </div>
+      </div>
+
+
+      <!-- <div id="user-options" class=" w-[30vw] h-[10vh] bg-white rounded-xl flex flex-row justify-around items-center">
+      <i class="ri-search-line text-2xl"></i>
+      <i class="ri-add-line text-2xl"></i>
+      <a href="/user-info"><i class="ri-user-fill text-2xl"></i></a>
+    </div> -->
+    </div>
+
+    <%- include('./partials/footer') %>

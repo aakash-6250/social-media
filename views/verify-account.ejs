@@ -1,0 +1,15 @@
+<%- include('./partials/header') %>
+
+<div class="w-screen h-screen flex flex-col items-center" >
+    <h1 class="text-center text-[6vmax] mt-[10vh] w-[90%] md:w-max py-[1vh] px-[3vw] font-extrabold bg-[#EEF7FF] rounded-xl text-[#4D869C]">Verify Account</h1>
+    <form class="w-full my-[2vh] rounded-xl py-[2vh] flex flex-col items-center m-auto  " action="/verify-account/<%= username %>" method="post">
+        <input class="md:w-[50%] w-[90%] text-center md:text-xl appearance-none mb-5 border-zinc-500 border-[1px] rounded-xl p-2 m-auto  " type="text" name="otp" required placeholder="Enter OTP">
+        <button class="bg-[#7AB2B2] w-max m-auto px-5 py-2 rounded md:text-xl text-white hover:bg-[#4D869C]">Submit OTP</button>
+        <p class="px-4 md:w-[50%] my-3 text-[#4D869C]">Please check your email we have sent an one time password.</p>
+        <p class=" px-4 md:w-[50%] text-[#4D869C]">If you didn't receive the email, click the "Resend Email" below to resend the email.</p>
+        <a class="block w-max  m-auto text-[#4D869C] underline py-3 px-5" href="/resend-email">Resend Email</a>
+    </form>
+
+</div>
+
+<%- include('./partials/footer') %>

@@ -1,0 +1,23 @@
+<%- include('./partials/header') %>
+
+  <%- include('./partials/nav') %>
+
+    <div class="w-[90%] py-[10vh] flex flex-col md:py-[5vh] gap-[5vh] m-auto">
+      <h1 class="bg-[#EEF7FF] md:w-[50%] w-full rounded-xl p-5 m-auto text-center text-5xl font-extrabold text-[#4D869C]">Login User</h1>
+
+      <form action="/login" class="flex flex-col items-center w-full" method="post">
+
+        <input class="md:w-[45%] w-[90%]  border border-zinc-500 p-2 rounded-md md:text-xl md:mb-[4vh] mb-[3vh] " required type="text" placeholder="Username" name="username">
+
+        <input class="md:w-[45%] w-[90%] border border-zinc-500 p-2 rounded-md md:text-xl  md:mb-[4vh] mb-[3vh]" type="password" placeholder="********" required name="password">
+
+        <p class="md:w-[45%] w-[90%] text-left mb-3 m-auto "><a class="text-[#4D869C]" href="/forget-password">forget password ?</a></p>
+
+        <button class="text-center block md:w-[45%] w-[90%] m-auto hover:bg-[#4D869C] rounded text-white py-3 px-5 bg-[#7AB2B2]">Login</button>
+
+        <p class="md:w-[45%] w-[90%] text-left mt-3 m-auto">Don't have an account? <a class="text-[#4D869C]" href="/register">register</a></p>
+
+      </form>
+    </div>
+
+    <%- include('./partials/footer') %>

@@ -1,0 +1,10 @@
+<%- include('./partials/header') %>
+
+<div class="w-full px-5 h-screen bg-[#4D869C] flex flex-col gap-3 justify-center items-center">
+    <h1 class="text-6xl text-center text-white"><%= message %></h1><br>
+    <% if(error){ %>
+       <p class="text-white text-center text-2xl"><%= error %></p>
+    <% } %>
+</div>
+
+<%- include('./partials/footer') %>

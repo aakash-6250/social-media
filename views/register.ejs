@@ -1,0 +1,28 @@
+<%- include('./partials/header') %>
+
+  <%- include('./partials/nav') %>
+
+
+    <div class=" rounded-xl w-[90%] py-[5vh] flex flex-col gap-[5vh] m-auto">
+      <h1 class="bg-[#EEF7FF] md:w-[50%] w-full rounded-xl p-5 m-auto text-center text-5xl font-extrabold text-[#4D869C]">Register
+        User
+      </h1>
+
+
+      <form action="/register" class="flex flex-col items-center w-full" method="post">
+        <input class="md:w-[45%] w-[90%]  border border-zinc-500 p-2 rounded-md md:text-xl md:mb-[4vh] mb-[3vh] " type="text" placeholder="full name" required
+          name="name">
+        <input class="md:w-[45%] w-[90%]  border border-zinc-500 p-2 rounded-md md:text-xl md:mb-[4vh] mb-[3vh] " type="text" placeholder="username" required
+          name="username">
+        <input class="md:w-[45%] w-[90%]  border border-zinc-500 p-2 rounded-md md:text-xl md:mb-[4vh] mb-[3vh] " type="email"
+          placeholder="email@servive.provider" required name="email">
+        <input class="md:w-[45%] w-[90%]  border border-zinc-500 p-2 rounded-md md:text-xl md:mb-[4vh] mb-[3vh] " type="password"
+          placeholder="********" required name="password">
+
+          <button class="text-center block md:w-[45%] w-[90%] m-auto hover:bg-[#4D869C] rounded text-white py-3 px-5 bg-[#7AB2B2]">Register User</button>
+          <p class="md:w-[45%] w-[90%] text-left mt-3 m-auto">Already have an account? <a class="text-[#4D869C]" href="/login">login</a></p>
+      </form>
+    
+    </div>
+
+    <%- include('./partials/footer') %>
